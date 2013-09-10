@@ -1,0 +1,81 @@
+html{
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #6393c1;
+}
+
+#pagina{
+    text-align: center;
+    background: #cfe7fa; /* Old browsers */
+    background: -moz-linear-gradient(top,  #cfe7fa 0%, #6393c1 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cfe7fa), color-stop(100%,#6393c1)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #cfe7fa 0%,#6393c1 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #cfe7fa 0%,#6393c1 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #cfe7fa 0%,#6393c1 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #cfe7fa 0%,#6393c1 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfe7fa', endColorstr='#6393c1',GradientType=0 ); /* IE6-9 */
+}
+
+#cabecalho{
+    width: 790px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+#cabecalho img{
+    padding: 50px 0 0 0;
+}
+
+#conteudo{
+    width: 790px;
+    padding: 10px;
+    margin: 30px auto;
+    background: #D3E6F6;
+    border-radius: .5em;
+}
+
+#conteudo h1{
+    /*color: #FF752E;*/
+    color: #FFF;
+    font-size: 2.2em;
+    font-family: sans-serif;
+    text-shadow: 1px 2px 0 #888;
+}
+
+#conteudo h1 span{
+    color: #1F7DFF;
+    text-shadow: 1px 2px 0 #888;
+}
+
+#conteudo p{
+    color: #333;
+    margin: 20px;
+    line-height: 1.65;
+    text-align: justify;
+    font-family: Tahoma, Verdana, Arial, Georgia, sans-serif;
+}
+
+#rodape{
+    width: 790px;
+    margin: 0px auto;
+}
+
+#copyright{
+    margin-top: 5px;
+    float: left;
+    color: #DDD;
+    font-size: 0.8em;
+    text-align: left;
+    font-family: Tahoma, Verdana, Arial, Georgia, sans-serif;
+}
+
+#django{
+    float: right;
+}
