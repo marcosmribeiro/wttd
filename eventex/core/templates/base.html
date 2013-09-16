@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EventeX</title>
+    <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/estilo.css" >
+</head>
+<body>
+    <div id="pagina">
+        <div id="cabecalho">
+            <img src="{{ STATIC_URL }}img/logo.png">
+        </div>
+        <div id="conteudo">
+            {% block content %}
+            {% endblock content %}
+        </div>
+        <div id="rodape">
+            <div id="copyright">
+                &copy 2013 <a>Eventex</a> todos os direitos reservados.
+            </div>
+            <div id="django">
+                <img src="{{ STATIC_URL }}img/django_power.gif">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
