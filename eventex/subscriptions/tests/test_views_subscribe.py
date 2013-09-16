@@ -1,5 +1,6 @@
 # coding: utf-8
 from django.test import TestCase
+from eventex.subscriptions.models import Subscription
 from eventex.subscriptions.forms import SubscriptionForm
 
 
@@ -35,3 +36,37 @@ class SubscribeTest(TestCase):
 		'Form deve conter 4 campos'
 		form = self.resp.context['form']
 		self.assertItemsEqual(['name', 'email', 'cpf', 'phone'], form.fields)
+
+
+class SubscribePostTest(TestCase):
+    def setUp(self):
+        data = dict(name='Marcos Ribeiro', cpf='12345678901',
+                    email='marcos@ribeiro.com', phone='2345678')
+        self.resp = self.client.post('/inscricao/', data)
+
+    def test_post(self):
+        'POST valido deve ser redirecionado para /inscricao/1/'
+        self.assertEqual(302, self.resp.status_code)
+
+    def test_save(self):
+        'POST valido deve ser salvo'
+        self.assertTrue(Subscription.objects.exists())
+
+
+class SubscribeInvalidPostTest(TestCase):
+    def setUp(self):
+        data = dict(name='Marcos Ribeiro', cpf=' 000000000012',
+                    email='marcos@ribeiro.com', phone='2345678')
+        self.resp = self.client.post('/inscricao/', data)
+
+    def test_post(self):
+        'POST invalido nao deve ser redirecionado'
+        self.assertEqual(200, self.resp.status_code)
+
+    def test_form_errors(self):
+        'Formulario deve conter erros'
+        self.assertTrue(self.resp.context['form'].errors)
+
+    def test_dont_save(self):
+        'Nao salva os dados'
+        self.assertFalse(Subscription.objects.exists())
