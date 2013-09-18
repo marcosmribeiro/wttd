@@ -11,6 +11,89 @@ body{
     background-color: #6393c1;
 }
 
+label{
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+h1{
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+a{
+    color: #1F7DFF;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #AAF;
+}
+
+input{
+    width: 100%;
+    height: 30px;
+    border-radius: 6px;
+    color: #0864db;
+    font-size: 1.2em;
+}
+
+input:focus{
+    border-color: rgba(82,168,236,.8);
+    outline: 0;
+    outline: thin dotted \9;
+    -moz-box-shadow: 0 0 8px rgba(82,168,236,.6);
+    box-shadow: 0 0 8px rgba(82,168,236,.6);
+}
+
+.button{
+    width: 100px;
+    float: right;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border-color: #4cae4c;
+    background-color: #5cb85c;
+    margin: 7px 15px 10px 0;
+    cursor: pointer;
+}
+
+.button:hover{
+    border-color: rgba(166, 244, 166,.8);
+    background-color: #2a962a;
+    outline: 0;
+    outline: thin dotted \9;
+    -moz-box-shadow: 0 0 8px rgba(166, 244, 166,.6);
+    box-shadow: 0 0 8px rgba(166, 244, 166,.6);
+}
+
+.ajuste{
+    clear: right;
+}
+
+.erro{
+    color: #b94a48;
+}
+
+.msg-erro{
+    color: #DA666C;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+#copyright a{
+    color: #fff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#copyright a:hover{
+    color: #AAF;
+}
+
 #pagina{
     text-align: center;
     background: #cfe7fa; /* Old browsers */
@@ -42,7 +125,6 @@ body{
 }
 
 #conteudo h1{
-    /*color: #FF752E;*/
     color: #FFF;
     font-size: 2.2em;
     font-family: sans-serif;
