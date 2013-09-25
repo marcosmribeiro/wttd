@@ -20,8 +20,8 @@ class SubscribeTest(TestCase):
 	def test_html(self):
 		'Html deve conter os seguintes inputs'
 		self.assertContains(self.resp, '<form')
-		self.assertContains(self.resp, '<input', 6)
-		self.assertContains(self.resp, 'type="text"', 4)
+		self.assertContains(self.resp, '<input', 7)
+		self.assertContains(self.resp, 'type="text"', 5)
 		self.assertContains(self.resp, 'type="submit"')
 
 	def test_csrf(self):
@@ -71,3 +71,12 @@ class SubscribeInvalidPostTest(TestCase):
     def test_dont_save(self):
         'Nao salva os dados'
         self.assertFalse(Subscription.objects.exists())
+
+
+class TemplateRegressionTest(TestCase):
+    def test_template_has_non_field_errors(self):
+        'Verifica se esta mostrando os non_field_errors no template'
+        invalid_data = dict(name='Marcos Ribeiro', cpf='1245678901')
+        response = self.client.post(r('subscriptions:subscribe'), invalid_data)
+
+        self.assertContains(response, '<ul class="errorlist">')
