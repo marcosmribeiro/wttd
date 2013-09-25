@@ -4,3 +4,4 @@ Unipath==1.0
 gunicorn==0.17.2
 dj-static==0.0.5
 Psycopg2
+south==0.7.6
