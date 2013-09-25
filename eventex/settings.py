@@ -128,6 +128,7 @@ INSTALLED_APPS = (
     'eventex.subscriptions',
 )
 
+# Usar o South para preparar o banco no teste ?
 SOUTH_TEST_MIGRATE = False
 
 # A sample logging configuration. The only tangible logging
