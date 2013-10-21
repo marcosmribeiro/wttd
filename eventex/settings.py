@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     'south',
     'eventex.core',
     'eventex.subscriptions',
+    'eventex.myauth',
 )
 
 # Usar o South para preparar o banco no teste ?
@@ -167,3 +168,10 @@ LOGGING = {
         },
     }
 }
+
+# AUTHENTICATION_BACKENDS = (
+#     'eventex.myauth.backends.EmailBackend',
+#     'django.contrib.auth.backends.ModelBackend',
+# )
+
+AUTH_USER_MODEL = 'myauth.User'
