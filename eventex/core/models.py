@@ -64,3 +64,33 @@ class Talk(models.Model):
     def get_absolute_url(self):
         # return '/palestras/%d/' % self.pk
         return ('core:talk_list', [self.pk,])
+
+    @property
+    def slides(self):
+        return self.media_set.filter(kind='SL')
+
+    @property
+    def videos(self):
+        return self.media_set.filter(kind='YT')
+
+
+class Course(Talk):
+    slots = models.IntegerField()
+    notes = models.TextField()
+
+    objects = PeriodManager()
+
+
+class Media(models.Model):
+    MEDIAS = (
+        ('YT', _('YouTube')),
+        ('SL', _('SlideShare')),
+    )
+
+    talk = models.ForeignKey('Talk')
+    kind = models.CharField(_('Tipo'), max_length=2, choices=MEDIAS)
+    title = models.CharField(_(u'Título'), max_length=2)
+    media_id = models.CharField(_('Ref'), max_length=255)
+
+    def __unicode__(self):
+        return u'%s - %s' % (self.talk.title, self.title)
